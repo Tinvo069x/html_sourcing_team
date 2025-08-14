@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PRC &amp; VN Commodity Lead - Direct Material</title>
+  <style>
+    :root{
+      --bg:#0b1220; --card:#121a2a; --muted:#8fa1b5; --text:#e7eefb; --accent:#4cc9f0;
+      --header:#1a2438; --row:#0f1729; --rowAlt:#0d1424; --ok:#22c55e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:1100px;margin:32px auto;padding:0 16px}
+    .title{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
+    h1{font-size:clamp(20px,3vw,28px);margin:0;letter-spacing:.2px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--header);border:1px solid #223052;color:var(--text);border-radius:12px;padding:8px 12px;font-size:14px}
+    .search{flex:1;min-width:220px}
+    input[type="text"]{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #223052;background:#0e1830;color:var(--text)}
+    .card{background:var(--card);border:1px solid #223052;border-radius:16px;box-shadow:0 20px 40px rgba(0,0,0,.25);overflow:hidden}
+    table{width:100%;border-collapse:separate;border-spacing:0}
+    thead th{position:sticky;top:0;background:linear-gradient(180deg,var(--header),#101a31);z-index:1}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #223052}
+    tbody tr{background:var(--row)}
+    tbody tr:nth-child(even){background:var(--rowAlt)}
+    tbody tr:hover{outline:1px solid #29406a}
+    th{font-weight:600;cursor:pointer;user-select:none}
+    th .arrow{opacity:.6;margin-left:6px}
+    .stats{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid #223052;color:var(--muted);font-size:13px}
+    .pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#0e1830;border:1px solid #223052;font-size:12px;color:var(--muted)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media (max-width:720px){
+      th,td{padding:10px 10px}
+      .controls{gap:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <h1>PRC &amp; VN Commodity Lead – Direct Material</h1>
+      <span class="pill" id="rowCount">0 items</span>
+    </div>
+
+    <div class="controls">
+      <label class="search chip" style="flex:1">
+        <span class="sr-only">Search</span>
+        <input id="globalSearch" type="text" placeholder="Search Category or Names… (e.g., Plastic, Sabrina)" />
+      </label>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th data-col="Category">Category <span class="arrow">⇅</span></th>
+            <th data-col="PRC PUR">PRC PUR <span class="arrow">⇅</span></th>
+            <th data-col="VN SOU">VN SOU <span class="arrow">⇅</span></th>
+            <th data-col="VN LEAD">VN LEAD <span class="arrow">⇅</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Accessories</td><td>Abby Sheng</td><td>Sarah Nguyen Ngoc Thanh Tran</td><td>Zach Hartman</td></tr>
+          <tr><td>Ball</td><td>Grace Zhan Liang</td><td>Madeline Tran Gia Hue</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Bearing</td><td>Grace Zhan Liang</td><td>Madeline Tran Gia Hue</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Blade</td><td>Jacky Yuan Yi Fei</td><td>Rosie Nguyen Kieu To Mai</td><td>Zach Hartman</td></tr>
+          <tr><td>Blow mould</td><td>Yvonne Zhou</td><td>Wendy Huynh Thi Truc Ngan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Charger</td><td>Bond Chen Xun Bang</td><td>Mark Le Quang Minh</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Chuck</td><td>Zeng Dong Liang (Zoe Zeng)</td><td>Madeline Tran Gia Hue</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Die Casting</td><td>Damon Lei Yu</td><td>Hachi Truong Thi Thu Hang</td><td>Zach Hartman</td></tr>
+          <tr><td>Electronic component</td><td>Cassie Wang</td><td>Henry Le Hoang Dien</td><td>Federico Zapata</td></tr>
+          <tr><td>Engine Parts</td><td>Jacky Yuan Yi Fei</td><td>Logan Tran Tan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Fastener</td><td>Grace Zhan Liang</td><td>Madeline Tran Gia Hue</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Filter</td><td>Yvonne Zhou</td><td>Wendy Huynh Thi Truc Ngan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Indirect</td><td>Charlie Long Qun Hui</td><td>Erika Pham Thi Ngoc Quyen</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Investment casting</td><td>Zeng Dong Liang (Zoe Zeng)</td><td>Hachi Truong Thi Thu Hang</td><td>Zach Hartman</td></tr>
+          <tr><td>Machining</td><td>Jason Qian</td><td>Ashley Tran Thi Thuy Trang</td><td>Zach Hartman</td></tr>
+          <tr><td>Metal others</td><td>Jacky Yuan Yi Fei</td><td>Logan Tran Tan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Molding Parts</td><td>Abby Sheng</td><td>Anne Tran Thi Hien</td><td>Federico Zapata</td></tr>
+          <tr><td>Motor</td><td>Grace Zhan Liang</td><td>Sally Vu Thi Hiep</td><td>Zach Hartman</td></tr>
+          <tr><td>Packaging</td><td>Charlie Long Qun Hui</td><td>Erika Pham Thi Ngoc Quyen</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>PCBA</td><td>Billy Chan</td><td>Dino Nguyen Van Anh</td><td>Federico Zapata</td></tr>
+          <tr><td>Plastic</td><td>Yvonne Zhou</td><td>Anne Tran Thi Hien</td><td>Federico Zapata</td></tr>
+          <tr><td>Plastic Tooling</td><td>Jimmy Yu</td><td>Truong Lam Phuong</td><td>Federico Zapata</td></tr>
+          <tr><td>Powder metal</td><td>Paris Xu</td><td>Sarah Nguyen Ngoc Thanh Tran</td><td>Zach Hartman</td></tr>
+          <tr><td>Power cord</td><td>Cassie Wang</td><td>Henry Le Hoang Dien</td><td>Federico Zapata</td></tr>
+          <tr><td>Pump</td><td>Jacky Yuan Yi Fei</td><td>Logan Tran Tan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Rubber</td><td>Yvonne Zhou</td><td>Wendy Huynh Thi Truc Ngan</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Spring</td><td>Grace Zhan Liang</td><td>Madeline Tran Gia Hue</td><td>Sabrina Tran Ngoc Anh</td></tr>
+          <tr><td>Stamping</td><td>Jaken Ke</td><td>Rosie Nguyen Kieu To Mai</td><td>Zach Hartman</td></tr>
+          <tr><td>Switch</td><td>Cassie Wang</td><td>Henry Le Hoang Dien</td><td>Federico Zapata</td></tr>
+          <tr><td>Wire &amp; wire assembly</td><td>Cassie Wang</td><td>Henry Le Hoang Dien</td><td>Federico Zapata</td></tr>
+        </tbody>
+      </table>
+      <div class="stats">
+        <div>Click a header to sort ↑↓. Use the search box to filter.</div>
+        <div id="lastAction">Ready</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const table = document.getElementById('dataTable');
+      const tbody = table.querySelector('tbody');
+      const headers = table.querySelectorAll('th');
+      const search = document.getElementById('globalSearch');
+      const rowCount = document.getElementById('rowCount');
+      const lastAction = document.getElementById('lastAction');
+
+      let sortState = { index: 0, dir: 'asc' };
+
+      function updateRowCount(){
+        const visible = [...tbody.rows].filter(r => r.style.display !== 'none').length;
+        rowCount.textContent = visible + ' item' + (visible!==1?'s':'');
+      }
+
+      function sortBy(index){
+        const dir = (sortState.index === index && sortState.dir === 'asc') ? 'desc' : 'asc';
+        sortState = { index, dir };
+        const rows = [...tbody.rows];
+        rows.sort((a,b)=>{
+          const A = a.cells[index].textContent.trim().toLowerCase();
+          const B = b.cells[index].textContent.trim().toLowerCase();
+          if (A < B) return dir==='asc'? -1: 1;
+          if (A > B) return dir==='asc'? 1: -1;
+          return 0;
+        });
+        rows.forEach(r=>tbody.appendChild(r));
+        headers.forEach((h,i)=>{
+          h.querySelector('.arrow').textContent = i===index ? (dir==='asc' ? '↑' : '↓') : '⇅';
+        });
+        lastAction.textContent = `Sorted by ${headers[index].dataset.col} (${dir})`;
+      }
+
+      function filterRows(term){
+        const t = term.trim().toLowerCase();
+        const rows = [...tbody.rows];
+        rows.forEach(r=>{
+          const match = [...r.cells].some(c=>c.textContent.toLowerCase().includes(t));
+          r.style.display = (t==='' || match) ? '' : 'none';
+        });
+        updateRowCount();
+        lastAction.textContent = t? `Filtered by "${term}"` : 'Cleared filter';
+      }
+
+      headers.forEach((h,i)=> h.addEventListener('click', ()=> sortBy(i)));
+      search.addEventListener('input', (e)=> filterRows(e.target.value));
+
+      // init
+      updateRowCount();
+    })();
+  </script>
+</body>
+</html>
